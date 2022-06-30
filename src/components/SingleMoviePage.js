@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Card } from 'react-bootstrap';
 
-class Movie extends React.Component {
+class SingleMoviePage extends React.Component {
 
     constructor() {
         super();
@@ -29,4 +29,4 @@ class Movie extends React.Component {
     }
 }
 
-export default Movie;
+export default SingleMoviePage;

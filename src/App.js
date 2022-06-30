@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react'
 import Movie from './components/Movie';
 import { Container, Row, Col } from 'react-bootstrap';
+import Navigation from './components/Navigation';
 
 class App extends React.Component {
 
@@ -13,7 +14,8 @@ class App extends React.Component {
       title: 'batman',
       movies: [],
       isLoaded: false,
-      error: null
+      error: null,
+      pageName: ''
     }
   }
 
@@ -49,46 +51,65 @@ class App extends React.Component {
 
     return (
       <Col key={index}>
-        <Movie details={movie}></Movie>
+        <Movie details={movie} changePage={this.changePage}></Movie>
       </Col>
     )
 
   }
 
+  changePage = (pageName, title = 'batman') => {
+
+    this.setState({
+      pageName: pageName,
+      title: title
+    })
+
+  }
+
   render() {
-    const { error, isLoaded, movies } = this.state;
 
-    if (error) {
-
+    if (this.state.pageName === 'singleMoviePage') {
       return (
-        <Container>
-          <div>Error: {error.message}</div>
-        </Container>
+        <></>
       )
 
-    } else if (!isLoaded) {
-      return (
-        <Container>
-          <div>Loadig...</div>
-        </Container>
-      )
     } else {
-      return (
-        <div className="App" >
-          <header className="App-header">
-
-            <Container>
-              <Row>
-                {this.state.movies.map(this.getMovie)}
-              </Row>
-            </Container>
 
 
-          </header>
-        </div>
-      );
+      const { error, isLoaded, movies } = this.state;
+
+      if (error) {
+
+        return (
+          <Container>
+            <div>Error: {error.message}</div>
+          </Container>
+        )
+
+      } else if (!isLoaded) {
+        return (
+          <Container>
+            <div>Loadig...</div>
+          </Container>
+        )
+      } else {
+        return (
+          <div className="App" >
+            <Navigation></Navigation>
+            <header className="App-header">
+
+              <Container>
+                <Row>
+                  {this.state.movies.map(this.getMovie)}
+                </Row>
+              </Container>
+
+
+            </header>
+          </div>
+        );
+      }
     }
-
   }
 }
 
