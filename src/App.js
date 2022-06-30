@@ -4,6 +4,7 @@ import React from 'react'
 import Movie from './components/Movie';
 import { Container, Row, Col } from 'react-bootstrap';
 import Navigation from './components/Navigation';
+import SingleMoviePage from './components/SingleMoviePage';
 
 class App extends React.Component {
 
@@ -70,7 +71,7 @@ class App extends React.Component {
 
     if (this.state.pageName === 'singleMoviePage') {
       return (
-        <></>
+        <SingleMoviePage title={this.state.title}></SingleMoviePage>
       )
 
     } else {
