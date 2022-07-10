@@ -109,7 +109,7 @@ class App extends React.Component {
             <Navigation changePage={this.changePage}></Navigation>
             <header className="App-header">
 
-              <Container>
+              <Container className='mt-3'>
                 <Row>
                   {this.state.movies.map(this.getMovie)}
                 </Row>

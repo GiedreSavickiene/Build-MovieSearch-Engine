@@ -28,6 +28,7 @@ class Navigation extends React.Component {
                             <NavDropdown.Item href="#" onClick={() => { this.props.changePage('', 'ice age', true) }}>Ice Age</NavDropdown.Item>
                             <NavDropdown.Item href="#" onClick={() => { this.props.changePage('', 'harry potter', true) }} >Harry Potter</NavDropdown.Item>
                             <NavDropdown.Item href="#" onClick={() => { this.props.changePage('', 'penguins', true) }}>Penguins</NavDropdown.Item>
+                            <NavDropdown.Item href="#" onClick={() => { this.props.changePage('', 'drama', true) }}>Drama</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>

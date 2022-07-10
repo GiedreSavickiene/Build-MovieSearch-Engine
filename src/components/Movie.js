@@ -9,14 +9,14 @@ class Movie extends React.Component {
     }
 
     componentDidMount() {
-        ;
+
 
     }
 
     render() {
         return (
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={this.props.details.Poster} />
+                <Card.Img height='300' variant="top" src={this.props.details.Poster} />
                 <Card.Body>
                     <Card.Title>{this.props.details.Title}</Card.Title>
                     <Card.Text>
