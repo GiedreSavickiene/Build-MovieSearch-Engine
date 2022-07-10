@@ -5,6 +5,7 @@ import Movie from './components/Movie';
 import { Container, Row, Col } from 'react-bootstrap';
 import Navigation from './components/Navigation';
 import SingleMoviePage from './components/SingleMoviePage';
+import Search from './components/Search';
 
 class App extends React.Component {
 
@@ -71,8 +72,15 @@ class App extends React.Component {
 
     if (this.state.pageName === 'singleMoviePage') {
       return (
-        <SingleMoviePage title={this.state.title}></SingleMoviePage>
+        <SingleMoviePage changePage={this.changePage} title={this.state.title}></SingleMoviePage>
       )
+
+    } else if (this.state.pageName === 'search') {
+
+      return (
+        <Search changePage={this.changePage}  ></Search>
+      )
+
 
     } else {
 
@@ -96,7 +104,7 @@ class App extends React.Component {
       } else {
         return (
           <div className="App" >
-            <Navigation></Navigation>
+            <Navigation changePage={this.changePage}></Navigation>
             <header className="App-header">
 
               <Container>

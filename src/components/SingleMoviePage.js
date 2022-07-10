@@ -37,7 +37,7 @@ class SingleMoviePage extends React.Component {
     render() {
         return (
             <div>
-                <Navigation></Navigation>
+                <Navigation changePage={this.props.changePage}></Navigation>
                 <Container className="mt-5">
                     <Row>
                         <Col xs={12} md={4}>
@@ -52,7 +52,7 @@ class SingleMoviePage extends React.Component {
                             <p>Released: {this.state.movie.Released}</p>
                             <div>{this.state.movie.Language}</div>
                             <span>Runtime: {this.state.movie.Runtime}</span>
-                            <div>Rating<Badge> variant="succes"{this.state.movie.imdbRating}</Badge></div>
+                            <div>Rating<Badge> {this.state.movie.imdbRating}</Badge></div>
                         </Col>
                     </Row>
                 </Container>
