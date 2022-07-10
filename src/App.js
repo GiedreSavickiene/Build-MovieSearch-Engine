@@ -59,12 +59,14 @@ class App extends React.Component {
 
   }
 
-  changePage = (pageName, title = 'batman') => {
+  changePage = (pageName, title = 'batman', search = false) => {
 
     this.setState({
       pageName: pageName,
       title: title
-    })
+    }, () =>
+      search ? this.searchForMovie() : null
+    )
 
   }
 

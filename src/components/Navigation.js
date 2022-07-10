@@ -24,10 +24,10 @@ class Navigation extends React.Component {
                     <Nav className="me-auto">
                         <Nav.Link href="#" onClick={() => { this.props.changePage('') }}>Home</Nav.Link>
                         <Nav.Link href="#" onClick={() => { this.props.changePage("search") }}>Search</Nav.Link>
-                        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#">Another action</NavDropdown.Item>
-                            <NavDropdown.Item href="#">Something</NavDropdown.Item>
+                        <NavDropdown title="More" id="basic-nav-dropdown">
+                            <NavDropdown.Item href="#" onClick={() => { this.props.changePage('', 'ice age', true) }}>Ice Age</NavDropdown.Item>
+                            <NavDropdown.Item href="#" onClick={() => { this.props.changePage('', 'harry potter', true) }} >Harry Potter</NavDropdown.Item>
+                            <NavDropdown.Item href="#" onClick={() => { this.props.changePage('', 'penguins', true) }}>Penguins</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
