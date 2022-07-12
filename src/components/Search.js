@@ -26,7 +26,7 @@ class Search extends React.Component {
         let titleInput = this.titleInput.current.value;
         let yearInput = this.yearInput.current.value;
 
-        fetch('https://www.omdbapi.com/?i=tt3896198&apikey=aacad9b8&t=' + titleInput + "&y=" + yearInput)
+        fetch('http://www.omdbapi.com/?i=tt3896198&apikey=aacad9b8&t=' + titleInput + "&y=" + yearInput)
             .then(res => res.json())
             .then(
                 (result) => {

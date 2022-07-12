@@ -14,7 +14,7 @@ class SingleMoviePage extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://www.omdbapi.com/?i=tt3896198&apikey=aacad9b8&t=' + this.props.title)
+        fetch('http://www.omdbapi.com/?i=tt3896198&apikey=aacad9b8&t=' + this.props.title)
             .then(res => res.json())
             .then(
                 (result) => {
