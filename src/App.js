@@ -29,7 +29,7 @@ class App extends React.Component {
 
   searchForMovie = () => {
 
-    fetch('htt://www.omdbapi.com/?i=tt3896198&apikey=aacad9b8&s=' + this.state.title + '&page=2')
+    fetch('https://www.omdbapi.com/?i=tt3896198&apikey=aacad9b8&s=' + this.state.title + '&page=2')
       .then(res => res.json())
       .then(
         (result) => {
